@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_of_Apex_Test_Classes__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>List of Apex Test Classes</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Test Class</fullName>
+                <default>true</default>
+                <label>All Test Class</label>
+            </value>
+            <value>
+                <fullName>Classes in Apex_Test_Classes__mdt</fullName>
+                <default>false</default>
+                <label>Classes in Apex_Test_Classes__mdt</label>
+            </value>
+            <value>
+                <fullName>Apex Test Suite</fullName>
+                <default>false</default>
+                <label>Apex Test Suite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

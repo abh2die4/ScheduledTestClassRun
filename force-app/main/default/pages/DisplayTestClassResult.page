@@ -1,0 +1,51 @@
+<!--
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
+* This page contains result of the test class run and is rendered as a PDD
+*
+* SampleURL to access page :
+* https://resilient-koala-2ntr2-dev-ed--c.visualforce.com/apex/DisplayTestClassResult?containerId=a085j000005UaGI
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @author         Abhijit Debadutta
+* @modifiedBy     Abhijit Debadutta
+* @maintainedBy   Abhijit Debadutta
+* @version        1.0
+* @created        2022-05-28
+* @systemLayer    Entrypoint
+* @controller     None | Standard | DisplayTestClassResultController.cls (x)
+* @controllerex   None 
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @changes
+* vX.X            Name or UserName
+* YYYY-MM-DD      Explanation of the change.  Multiple lines can be used to explain the change, but
+*                 each line should be indented till left aligned with the previous description text.
+*
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
+-->
+<apex:page showHeader="false" sidebar="false" controller="DisplayTestClassResultController">
+<apex:form >
+    <apex:pageblock title="General Information">
+        <apex:pageMessages id="showmsg"></apex:pageMessages>
+        <apex:panelGrid id="theGrid" columns="1">
+            <b>Sandbox Name:</b><apex:outputText value="{!sandboxname}" id="sandboxName"/>
+            <b>Date of Report Generatiton:</b><apex:outputText value="{!NOW()}"/>
+        </apex:panelGrid>
+    </apex:pageblock>
+    <apex:pageBlock title="Apex Test Run Result">
+        <apex:pageBlockSection title="No Data Found" collapsible="false" rendered="{!IF(testRunRes.size == 0, true,false)}"/>
+        <apex:pageBlockTable value="{!testRunRes}" var="item" rendered="{!IF(testRunRes.size > 0, true, false)}" border="1px">
+            <apex:column value="{!item.Apex_Test_Class_Name__c}"/>
+            <apex:column value="{!item.Apex_Test_Method_Name__c}"/>
+            <apex:column value="{!item.Outcome__c}"/>
+            <apex:column value="{!item.Exception_Message__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Apex Class Coverage">
+        <apex:pageBlockSection title="No Data Found" collapsible="false" rendered="{!IF(classCoverage.size == 0, true,false)}"/>
+        <apex:pageBlockTable value="{!classCoverage}" var="item" rendered="{!IF(classCoverage.size > 0, true, false)}" border="1px">
+            <apex:column value="{!item.Apex_Class_Name__c}"/>
+            <apex:column value="{!item.Coverage__c}"/>
+            <apex:column value="{!item.Lines_Uncovered__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Apex_Test_Suite_Is_Provided</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL( List_of_Apex_Test_Classes__c , &apos;Apex Test Suite&apos;), ISBLANK( Apex_Test_Suite_Name__c ) )</errorConditionFormula>
+    <errorDisplayField>Apex_Test_Suite_Name__c</errorDisplayField>
+    <errorMessage>Please enter a test suite name in the &apos;Apex Test Suite Name&apos; field</errorMessage>
+</ValidationRule>

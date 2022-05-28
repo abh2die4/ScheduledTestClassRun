@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apex_Test_Run_Container__c</fullName>
+    <externalId>false</externalId>
+    <label>Apex Test Run Container</label>
+    <referenceTo>Apex_Test_Run_Container__c</referenceTo>
+    <relationshipLabel>Apex Test Class Run Results</relationshipLabel>
+    <relationshipName>Apex_Test_Class_Run_Results</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
